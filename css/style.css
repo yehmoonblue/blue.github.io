@@ -1,12 +1,13 @@
 body{
-background-color: lightblue;
+  padding-top: 70px;
+  background-color: lightblue;
 }
 tilte{
-color: white;
+  color: white;
 }
 h2{
-color: white;
+  color: white;
 }
 h1{
-color: red;
+  color: red;
 }
