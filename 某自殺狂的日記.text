@@ -1,19 +1,79 @@
-二Ο二七年九月一日
-今天衝到馬路中間打算給車撞，被小欣給拉了一把，計畫失敗。
-二Ο二七年九月二日
-今天從四樓跳下去，被姐姐接住，計畫再次失敗。
-二Ο二七年九月三日
-今天嘗試割腕，被小羽發現，然後被打昏了。
-二Ο二七年九月四日
-今天出門尋找上吊用的繩子，買到後被謙發現，然後被迫接受精靈的感化教育，繩子也被沒收了。
-二Ο二七年九月五日
-今天衝去黑道的聚會場所尋死，被獨眼發現，然後去了他的動物園，小動物很可愛。
-二Ο二七年九月六日
-今天又衝到馬路中央，被小欣發現，然後被打回路邊了。
-二Ο二七年九月七日
-今天打算用剪刀自殺，卻發現自己的剪刀被獨眼捐到孤兒院了。
-二Ο二七年九月八日
-今天打算去買新的剪刀，但不管到哪裡剪刀都缺貨，據說被一個十來歲的少年通通買走了。
-二Ο二七年九月九日
-今天跳進游泳池打算溺死，被小逸發現，然後看到了渾身溼透的小逸，真是……
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href = "css/bootstrap.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/yehmoonblue/blue.github.io/master/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+</html>
+<body>
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-default">
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"></a></li>
+      <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">工具 <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        <li><a href="https://www.pixnet.net/" class = "#">ㄎㄎ</a></li>
+        <li><a href="https://www.youtube.com/?gl=TW&hl=zh-TW" class = "#">喔喔~</a></li>
+        <li><a href="https://www.google.com.tw/" class = "#">哈哈</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="https://github.com/" class = "#">Ya~</a></li>
+    </ul>
+</li>
+</ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">日誌~</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">首頁</a></li>
+      <li><a href="https://raw.githubusercontent.com/yehmoonblue/blue.github.io/master/%E6%9F%90%E8%87%AA%E6%AE%BA%E7%8B%82%E7%9A%84%E6%97%A5%E8%A8%98.text">純屬虛構~</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  別在意
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">走路~</h4>
+      </div>
+      <div class="modal-body">
+        <img src = "picasion.com_79a4600c44d5cc4fbf48091f48eed97f.gif">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  </nav>
+  <h2>二Ο二七年九月一日<p>今天衝到馬路中間打算給車撞，被小欣給拉了一把，計畫失敗。</h2>
+  <h2>二Ο二七年九月二日<p>今天從四樓跳下去，被姐姐接住，計畫再次失敗。</h2>
+  <h2>二Ο二七年九月三日<p>今天嘗試割腕，被小羽發現，然後被打昏了。</h2>
+  <h2>二Ο二七年九月四日<p>今天出門尋找上吊用的繩子，買到後被謙發現，然後被迫接受精靈的感化教育，繩子也被沒收了。</h2>
+  <h2>二Ο二七年九月五日<p>今天衝去黑道的聚會場所尋死，被獨眼發現，然後去了他的動物園，小動物很可愛。</h2>
+  <h2>二Ο二七年九月六日<p>今天又衝到馬路中央，被小欣發現，然後被打回路邊了。</h2>
+  <h2>二Ο二七年九月七日<p>今天打算用剪刀自殺，卻發現自己的剪刀被獨眼捐到孤兒院了。</h2>
+  <h2>二Ο二七年九月八日<p>今天打算去買新的剪刀，但不管到哪裡剪刀都缺貨，據說被一個十來歲的少年通通買走了。</h2>
+  <h2>二Ο二七年九月九日<p>今天跳進游泳池打算溺死，被小逸發現，然後看到了渾身溼透的小逸，真是……</h2>
+  <a href = "https://tw.yahoo.com/" class = "btn btn-link">yahoo的首頁</a>
+  <a href = "" class = "btn btn-info">按了會重新整理</a>
+</body>
+
+
+
+
+
+
 
