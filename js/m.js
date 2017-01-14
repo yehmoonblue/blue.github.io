@@ -1,2 +1,3 @@
 console.log(123)
-$("selector").val();
+$("#selectList").val();
+$("#selectList :selected").text();
