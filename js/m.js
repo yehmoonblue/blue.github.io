@@ -1,5 +1,5 @@
 console.log(123)
-$(selector).val();
+$("selector").val();
 function check(){
             var talk=true;
             var name = $("input#name").val();
