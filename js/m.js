@@ -2,7 +2,7 @@ console.log(123)
 var talk=true;
 var name = $("input#name").val();
 var age = $("input#age").val();
-$("selector").val("click","#button",function check(){
+$("selector").val("click","#textbutton",function check(){
             if(talk){
                         alert("Hi!,"+$("input#name").val("")+",你今年是"+$("input#age").val("")+"歲。")
             }
