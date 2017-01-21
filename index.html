@@ -90,4 +90,7 @@
   <a href = "" class = "btn btn-info">按了會重新整理</a>
 </body>
 
-<script type="text/javascript" src="js/fdb-all.html"></script>
+<script type="text/javascript" src="js/fdb-all.html">
+  var fdb = new ForerunnerDB();
+  var db = fdb.db("shop");
+  var studentCollection = db.collection('students');</script>
