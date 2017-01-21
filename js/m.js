@@ -15,6 +15,3 @@ function check(){
             }
 });
 
-            var fdb = new ForerunnerDB();
-            var db = fdb.db("你的資料庫名稱");
-            var studentCollection = db.collection('students');
