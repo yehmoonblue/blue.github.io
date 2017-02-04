@@ -116,7 +116,7 @@
     $("tbody").text();
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
-      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+ArticleCollection.find()[i].age+"</tr></td>"
+      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</tr></td>"
          $("tbody").append(commentdata); 
     };
   };
