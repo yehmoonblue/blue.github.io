@@ -96,13 +96,9 @@
         <td>咻咻~</td>
         <td>ㄎㄎ</td>
         <td>-_-</td>
-        <td>=_=</td>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Ya~</td>
-      </tr>
     </tbody>
   </table>
   <a href = "https://tw.yahoo.com/" class = "btn btn-link">yahoo的首頁</a>
@@ -112,6 +108,16 @@
 <script>
   var fdb = new ForerunnerDB();
   var db = fdb.db("shop");
-  var studentCollection = db.collection('students');
+  studentCollection = db.collection('articles');
   studentCollection.load();
+  $("div#comment").hide();
+  
+  function showitem(){
+    $("tbody").text();
+    $("div#comment").show();
+    for(var i=0;i<studentCollection.find().length;i++){
+      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+ArticleCollection.find()[i].age+
+         $("tbody").append(commentdata); 
+    };
+  };
 </script>
