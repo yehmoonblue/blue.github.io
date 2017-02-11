@@ -89,8 +89,14 @@
   <h2>附上一張偶然看到的圖。</h2>
   <img src = "picture/CIBQZnVlM7.jpg">
   <table class="table table-hover" type="button" data-toggle="modal" data-target=".bs-example-modal-sm">
-      <tbody></tbody>
-  <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <tbody></tbody>
+        </div>
+      </div>
+    </div>
+    <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
     <thead>
       <tr>
         <td>name</td>
