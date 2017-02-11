@@ -110,7 +110,7 @@
   <input id="mmm" type="text"><br>
   age:<br>
   <input id="lll" type="text"><br>
-  <button id="new" type="button" class="btn btn-default">新增</button><br>
+  <button id="new" type="button" class="btn btn-default" onclick="newstdent">新增</button><br>
   <input id="s" type="text" >
   <button id="a" type="button" class="btn btn-default">搜尋</button><br>
   <a href = "https://tw.yahoo.com/" class = "btn btn-link">yahoo的首頁</a>
@@ -160,5 +160,12 @@
     $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
   };
   $("table").on("click","button#items",searchdetail);
+  
+  function newstdent(){
+  var newStudent = {
+    name: $("input#name").val,
+    age:$("input#age").val,
+studentCollection.insert(newStudent);}
+  
   
 </script>
