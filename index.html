@@ -119,13 +119,14 @@
   studentCollection = db.collection('articles');
   studentCollection.load();
   $("div#comment").hide();
+  result = DB.collection("students").find(query);
   
   function showitem(){
     $("tbody").text("");
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</tr></td>"
-      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i].
+      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i].data+"</tr></td>"
       $("tbody").append(commentdata); 
       $("table#idtable tbody").append
     };
@@ -144,11 +145,16 @@
   function search(){
   var query={
   type: $("input#search").val()
-  }}
+  }
+  $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
+  };
   function searchdetail(){
   var id =$(this).text();
   var query = {
     _id: id
 };
-result = DB.collection("students").find(query);
+    console.log(id);
+    $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
+  };
+  $("table").on("click","button#items",searchdetail);
 </script>
