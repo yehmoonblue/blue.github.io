@@ -121,11 +121,34 @@
   $("div#comment").hide();
   
   function showitem(){
-    $("tbody").text();
+    $("tbody").text("");
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</tr></td>"
-         $("tbody").append(commentdata); 
+      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i].
+      $("tbody").append(commentdata); 
+      $("table#idtable tbody").append
     };
   };
+  
+  function additem(){
+  studentCollection.insert({
+  title: $("input#title").val(),
+  type: $("input#type").val(),
+  content: $("textarea#content").val(),
+  });
+  studentCollection.save()
+  showitem();
+  alert(JSON.stringify(studentCollection.find()));
+  }
+  function search(){
+  var query={
+  type: $("input#search").val()
+  }}
+  function searchdetail(){
+  var id =$(this).text();
+  var query = {
+    _id: id
+};
+result = DB.collection("students").find(query);
 </script>
