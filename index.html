@@ -161,8 +161,8 @@
   
   function newstudent(){
   var newStudent = {
-    name: $("input#mmm").val,
-    age:$("input#lll").val,
+    name: $("input#mmm").val(),
+    age:$("input#lll").val()
     
   }
   studentCollection.insert(newstudent);
