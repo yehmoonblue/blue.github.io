@@ -4,14 +4,13 @@
     <link href = "css/bootstrap.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/yehmoonblue/blue.github.io/master/picture/icon.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/m.js"></script>
+    <script type="text/javascript" src="js/fdb-all.html"> </script>
   </head>
-</html>
 
 <body>
-  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/m.js"></script>
-  <script type="text/javascript" src="js/fdb-all.html"> </script>
   <nav class="navbar navbar-default">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"></a></li>
@@ -127,9 +126,9 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</tr></td>"
-      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i].data+"</tr></td>"
+      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></tr></td>"
       $("tbody").append(commentdata); 
-      $("table#idtable tbody").append
+      $("table#idtable tbody").append(searchdata);
     };
   };
   
@@ -149,6 +148,7 @@
   }
   $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
   };
+  
   function searchdetail(){
   var id =$(this).text();
   var query = {
@@ -171,4 +171,6 @@
   };
   
   
-</script>
+  
+  </script>
+</html>
