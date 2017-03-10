@@ -106,8 +106,6 @@
   <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
   <input id="s" type="text" >
   <button id="a" type="button" class="btn btn-default">搜尋</button><br>
-  <a href = "https://tw.yahoo.com/" class = "btn btn-link">yahoo的首頁</a>
-  <a href = "" class = "btn btn-info">按了會重新整理</a>
 </body>
 
 <script>
@@ -121,9 +119,9 @@
     $("tbody").text("");
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
-      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</tr></td>"
-      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></tr></td>"
-      $("tbody").append(commentdata); 
+      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].content+"</tr></td>"
+      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></tr><td><button id='deleteitem'>刪除</button></td></tr>"
+      $("table#commenttable tbody").append(commentdata); 
       $("table#idtable tbody").append(searchdata);
     };
   };
@@ -140,7 +138,7 @@
   }
   function search(){
   var query={
-  type: $("input#search").val()
+    type: $("input#search").val()
   }
   $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
   };
@@ -165,7 +163,7 @@
     studentCollection.save();
     console.log(333);
   };
-  
+  $("table").on("click","a#items",searchdetail);
   
   
   </script>
