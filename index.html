@@ -52,6 +52,7 @@
               </div>
               <div class="modal-body">
               </div>
+              <img src="image/下載.jpg"><br>
               <form action="">
                 名字:<br>
                 <input id="name" type="text" ><br>
@@ -123,7 +124,7 @@
       var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></tr><td><button id='deleteitem'>刪除</button></td></tr>"
       $("table#commenttable tbody").append(commentdata); 
       $("table#idtable tbody").append(searchdata);
-      console.log(928);
+      console.log(commentdata);
     };
   };
   
