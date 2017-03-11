@@ -130,9 +130,8 @@
   
   function additem(){
   studentCollection.insert({
-  title: $("input#title").val(),
-  type: $("input#type").val(),
-  content: $("textarea#content").val(),
+  name: $("input#name").val(),
+  age: $("input#age").val(),
   });
   studentCollection.save()
   showitem();
