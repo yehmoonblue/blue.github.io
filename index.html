@@ -100,9 +100,9 @@
     </tbody><button type="button" class="btn btn-default">刪除</button>
   </table>
   name:<br>
-  <input id="name" type="text"><br>
+  <input id="name2" type="text"><br>
   age:<br>
-  <input id="age" type="text"><br>
+  <input id="age2" type="text"><br>
   <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
   <input id="s" type="text" >
   <button id="a" type="button" class="btn btn-default">搜尋</button><br>
@@ -155,8 +155,8 @@
   
   function newstudent(){
   var newStudent = {
-    name: $("input#name").val(),
-    age:$("input#age").val()
+    name: $("input#name2").val(),
+    age:$("input#age2").val()
     
   }
   studentCollection.insert(newStudent);
