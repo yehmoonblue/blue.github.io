@@ -148,7 +148,6 @@
   var id =$(this).text();
   var query = {
     _id: id
-    result = DB.collection("studentCollection").find(query);
 };
     console.log(id);
     $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
@@ -167,11 +166,6 @@
   };
   $("table").on("click","a#items",searchdetail);
   
-  function deleteitem(){
-    collection.remove({
-    _id: "$b28e3b2v4"
-});
-  }
   
   
   </script>
