@@ -121,7 +121,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td></td>
+      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td></tr>
       $("table#commenttable tbody").append(commentdata); 
       $("table#idtable tbody").append(searchdata);
       console.log(commentdata);
