@@ -100,9 +100,9 @@
     </tbody><button type="button" class="btn btn-default">刪除</button>
   </table>
   name:<br>
-  <input id="mmm" type="text"><br>
+  <input id="name" type="text"><br>
   age:<br>
-  <input id="lll" type="text"><br>
+  <input id="age" type="text"><br>
   <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
   <input id="s" type="text" >
   <button id="a" type="button" class="btn btn-default">搜尋</button><br>
@@ -119,7 +119,7 @@
     $("tbody").text("");
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
-      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].content+"</tr></td>"
+      var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td><td>"+studentCollection.find()[i].content+"</td></tr>"
       var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></tr><td><button id='deleteitem'>刪除</button></td></tr>"
       $("table#commenttable tbody").append(commentdata); 
       $("table#idtable tbody").append(searchdata);
