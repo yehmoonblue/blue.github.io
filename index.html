@@ -120,7 +120,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></td><td><button id='deleteitem' data-id='"+studentCollection.find()[i]._id+"'>刪除</button></td></tr>"
+      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></td><td><button id='deleteitem' type="button" class="btn btn-default" data-id='"+studentCollection.find()[i]._id+"'>刪除</button></td></tr>"
       $("tbody").append(commentdata);
       $("table#idtable tbody").append(searchdata);
       console.log(999);
