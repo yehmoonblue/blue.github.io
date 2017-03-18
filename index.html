@@ -215,6 +215,13 @@
   var newData = {
   name: $("input#editname").val(),
   age: $("input#editage").val(),
+  };
+  var r=confirm("確定嗎?")
+  if(r){
+  studentCollection.updateById(editDataId,newData);
+  studentCollection.save();
+  }else{
+  alert("你沒更改。")
   }}
   
   
@@ -222,6 +229,7 @@
   
   $("table").on("click","button#deleteitem",deleteitem);
   $("table").on("click","a#items",searchdetail);
+  $("table").on("click","button#edititem",editModal);
 
   
   
