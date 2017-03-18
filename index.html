@@ -141,7 +141,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='change' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
+      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='change' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
       $("#table1 tbody").append(commentdata);
       $("#table2 tbody").append(searchdata);
       console.log(999);
@@ -201,6 +201,21 @@
       console.log(777);
     }}
   
+  
+  function editModal(){
+  editDataId = $(this).data("id");
+  var query={
+  _id: editDataId
+  }
+  $("input#editname").val(studentCollection.find(query)[0].name);
+  $("input#editage").val(studentCollection.find(query)[0].age);
+  }
+  
+  function editItem(){
+  var newData = {
+  name: $("input#editname").val(),
+  age: $("input#editage").val(),
+  }}
   
   
   
