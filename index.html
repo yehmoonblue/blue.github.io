@@ -91,22 +91,6 @@
     </thead>
     <tbody>
     </tbody>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">編輯</button>
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <form action="">
-                名字:<br>
-                <input type="text" value=""><br>
-                年齡:<br>
-                <input type="text" value=""><br>
-                <button type="button" class="btn btn-default" >儲存</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-              </form>
-            </div>
-          </div>
-        </div>
-  </table>
   </table>
   <table id="table2" class="table table-hover" type="button">
 <thead>
@@ -117,6 +101,7 @@
     </thead>
     <tbody>
     </tbody>
+    </table>
   name:<br>
   <input id="name2" type="text"><br>
   age:<br>
@@ -156,7 +141,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button></td><td><button id='change' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+">編輯</button></td></tr>"
+      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='change' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+">編輯</button></td></tr>"
       $("#table1 tbody").append(commentdata);
       $("#table2 tbody").append(searchdata);
       console.log(999);
