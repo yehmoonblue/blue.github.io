@@ -101,6 +101,21 @@
     </thead>
     <tbody>
     </tbody>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">編輯</button>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <form action="">
+                名字:<br>
+                <input type="text" value=""><br>
+                年齡:<br>
+                <input type="text" value=""><br>
+                <button type="button" class="btn btn-default" >儲存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+              </form>
+            </div>
+          </div>
+        </div>
   </table>
   name:<br>
   <input id="name2" type="text"><br>
@@ -200,6 +215,10 @@
       alert("你沒有刪掉");
       console.log(777);
     }}
+  
+  
+  
+  
   
   $("table").on("click","button#deleteitem",deleteitem);
   $("table").on("click","a#items",searchdetail);
