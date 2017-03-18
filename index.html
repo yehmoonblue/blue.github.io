@@ -81,28 +81,24 @@
   <h1>2個小時！</h1>
   <h2>崩潰。<p>後來又在外加了些工具和修改內容......<p>時間一直飛<p>真是讓人無力啊~</h2>
   <img src="picture/ios-7-symbol-nożyczek_318-34277.jpg"><br>
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">顯示資料</button>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">XD</h4>
-              </div>
-              <div class="modal-body">
-              </div>
-              <form action="">
-                名字:<br>
-                <input id="name" type="text" ><br>
-                年齡:<br>
-                <input id="age" type="text" ><br>
-                <button id="textbutton" type="button" class="btn btn-default">Hello</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input id="one-checkbox" type="checkbox" value="人類"/> 人類
-                <button id="button">點下了嗎？</button>
-              </form>
-            </div>
-          </div>
+  <table class="table table-hover" type="button" data-toggle="modal" data-target=".bs-example-modal-sm">
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+        <tbody></tbody>
+        </div>
+      </div>
+    </div>
+    <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
+    <thead>
+     <tr>
+       <td>name</td>
+       <td>age</td>
+     </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
   name:<br>
   <input id="name2" type="text"><br>
   age:<br>
