@@ -166,19 +166,20 @@
   
   
   function deleteitem(){
+    var id = $(this).data("id");
+    console.log(id)
     var r=confirm("你確定要刪掉嗎？")
     if(r){
-      var id = $(this).closest("tr")[0].firstChild.innerText;
-      console.log(id)
-      ArticleCollection.remove({
-        _id: id
-      });
-      ArticleCollection.save();
-      showitem();
-    }else{
-      alert("你沒有刪掉");
+    ArticleCollection.remove({
+      _id:id
+    });  
+    ArticleCollection.save();
+    showitem();
     }
-  }
+    else{
+    alert("你沒有刪掉唷");
+    }
+    }
   $("table").on("click","a#items",searchdetail);
   $("table").on("click","button#deleteitem",deleteitem);
   
