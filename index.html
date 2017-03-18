@@ -120,7 +120,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></tr></td><td><button id='deleteitem' data-id='"+studentCollection.find()[i]._id+"'>刪除</button></td></tr>"
+      var searchdata="<tr><td><button id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</button></tr></td>"
       $("tbody").append(commentdata);
       $("table#idtable tbody").append(searchdata);
       console.log(999);
@@ -165,23 +165,9 @@
   };
   
   
-  function deleteitem(){
-    var id = $(this).data("id");
-    console.log(id)
-    var r=confirm("你確定要刪掉嗎？")
-    if(r){
-    studentCollection.remove({
-      _id:id
-    });  
-    studentCollection.save();
-    showitem();
-    }
-    else{
-    alert("你沒有刪掉唷");
-    }
-    }
+  
   $("table").on("click","a#items",searchdetail);
-  $("table").on("click","button#deleteitem",deleteitem);
+
   
   
   </script>
