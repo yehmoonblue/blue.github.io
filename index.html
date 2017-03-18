@@ -170,10 +170,10 @@
     console.log(id)
     var r=confirm("你確定要刪掉嗎？")
     if(r){
-    ArticleCollection.remove({
+    studentCollection.remove({
       _id:id
     });  
-    ArticleCollection.save();
+    studentCollection.save();
     showitem();
     }
     else{
