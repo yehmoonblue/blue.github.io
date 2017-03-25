@@ -235,10 +235,12 @@
   function look(){
     var result = studentCollection.find({
       age: {
-      "$gt":$("#bg").val()/1,
-      "$lt":$("#sm").val()/1
+        "$gt":$("#bg").val()/1,
+        "$lt":$("#sm").val()/1
       }
-    })}console.log(0430);
+    })
+    console.log(0430);
+  }
   
   
   
