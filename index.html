@@ -233,6 +233,7 @@
   
   
   function look(){
+    for(var i=0;i<studentCollection.find().length;i++){
     if($("#sm").val()!=""){
     var result = studentCollection.find({
       age: {
@@ -249,7 +250,7 @@
     }
     });
     console.log(result[0].age);
-  }}
+  }}}
   
   
   
