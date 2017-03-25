@@ -233,8 +233,8 @@
   
   
   function look(){
-    for(var i=0;i<studentCollection.find().length;i++){
     if($("#sm").val()!=""){
+      for(var i=0;i<studentCollection.find().length;i++){
     var result = studentCollection.find({
       age: {
         "$gt":$("#bg").val()/1,
