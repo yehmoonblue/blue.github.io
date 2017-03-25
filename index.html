@@ -84,7 +84,7 @@
   <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
   <input id="sm" type="number">
   <input id="bg" type="number">
-  <button type="button" class="btn btn-default">尋找</button>
+  <button id="search" type="button" class="btn btn-default">尋找</button>
   <table id="table1" class="table table-hover" type="button">
 <thead>
       <tr>
@@ -229,6 +229,20 @@
     }else{
       alert("你沒更改。")
     }}
+  
+  
+  function look(){
+  result = studentCollection.find({
+    score: {
+        $gt: 60     
+    }
+});
+    console.log(0430)
+     } 
+  
+  
+  
+  
   
   
   
