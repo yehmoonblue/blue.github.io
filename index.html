@@ -234,7 +234,6 @@
   
   function look(){
     if($("#sm").val()!=""){
-      for(var i=0;i<studentCollection.find().length;i++){
     var result = studentCollection.find({
       age: {
         "$gt":$("#bg").val()/1,
@@ -242,7 +241,9 @@
       }
     });
     console.log(result[0].age);
-  
+for(var i=0;i<studentCollection.find().length;i++){
+  $("p#look").append("age:"+result[i].age+ "name:"+result[i].name)
+}
   }else{
     var result = studentCollection.find({
       age:{
@@ -250,7 +251,7 @@
     }
     });
     console.log(result[0].age);
-  }}}
+  }}
   
   
   
