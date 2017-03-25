@@ -242,7 +242,7 @@
     });
     console.log(result[0].age);
 for(var i=0;i<studentCollection.find().length;i++){
-  $("p#look").append("age:"+result[i].age+ "name:"+result[i].name)
+  $("p#look").append("age:"+result[i].age)
 }
   }else{
     var result = studentCollection.find({
