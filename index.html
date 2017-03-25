@@ -82,8 +82,8 @@
   <h2>崩潰。<p>後來又在外加了些工具和修改內容......<p>時間一直飛<p>真是讓人無力啊~</h2>
   <img src="picture/ios-7-symbol-nożyczek_318-34277.jpg"><br>
   <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
-  <input id="sm" type="number">
-  <input id="bg" type="number">
+  <input id="lt" type="number">
+  <input id="gt" type="number">
   <button id="search" type="button" class="btn btn-default">尋找</button>
   <table id="table1" class="table table-hover" type="button">
 <thead>
@@ -232,7 +232,7 @@
   
   
   function look(){
-  result = studentCollection.find({
+  result = students.find({
     score: {
         $gt: 60     
     }
