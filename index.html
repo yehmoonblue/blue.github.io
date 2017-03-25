@@ -204,26 +204,26 @@
   
   
   function editModal(){
-  editDataId = $(this).data("id");
-  var query={
-  _id: editDataId
-  }
-  $("input#editname").val(studentCollection.find(query)[0].name);
-  $("input#editage").val(studentCollection.find(query)[0].age);
+    editDataId = $(this).data("id");
+    var query={
+      _id: editDataId
+    }
+    $("input#editName").val(studentCollection.find(query)[0].name);
+    $("input#editAge").val(studentCollection.find(query)[0].age);
   }
   
   function editItem(){
-  var newData = {
-  name: $("input#editname").val(),
-  age: $("input#editage").val(),
-  };
-  var r=confirm("確定嗎?")
-  if(r){
-  studentCollection.updateById(editDataId,newData);
-  studentCollection.save();
-  }else{
-  alert("你沒更改。")
-  }}
+    var newData = {
+      name: $("input#editName").val(),
+      age: $("input#editAge").val(),
+    };
+    var r=confirm("確定嗎?")
+    if(r){
+      studentCollection.updateById(editDataId,newData);
+      studentCollection.save();
+    }else{
+      alert("你沒更改。")
+    }}
   
   
   
