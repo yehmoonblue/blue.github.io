@@ -84,7 +84,7 @@
   <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
   <input id="sm" type="number">
   <input id="bg" type="number">
-  <button id="search" type="button" class="btn btn-default" onclick="look()">尋找</button>
+  <button id="searchs" type="button" class="btn btn-default" onclick="look()">尋找</button>
   <table id="table1" class="table table-hover" type="button">
 <thead>
       <tr>
@@ -239,7 +239,7 @@
         "$lt":$("#sm").val()/1
       }
     })
-    console.log(result[0].name);
+    console.log(result[0].searchs);
   }
   
   
