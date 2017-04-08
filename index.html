@@ -244,7 +244,7 @@
     });
     console.log(result[0].age);
 for(var i=0;i<result.length;i++){
-  $("p#look").append("age:"+result[i].age+ "name:"+result[i].name)
+  $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "<br>")
 }
   }else{
     var result = studentCollection.find({
@@ -259,17 +259,23 @@ for(var i=0;i<result.length;i++){
   function str(){
     if($("#mu:checked").length>0){
       var checkList = []
-      for(var i=0; i<Array.length; itt){
-        checkList.push(Array[i].value)
+      for(var i=0; i<$("#mu:checked").length; i++){
+        checkList.push($("#mu:checked")[i].value)
       }
+      var result = studentCollection.find({
+        name:{
+          $in:checkList
+        }
+      });
+      $("p#searchresult").text(""); 
+      for(var i=0;i<result.length;i++){
+        $("p#str").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
+      }
+    }else{
+      alert("你沒選")
     }
   }
-  
-  
-  
-  
-  
-  
+    
   
   $("table").on("click","button#deleteitem",deleteitem);
   $("table").on("click","a#items",searchdetail);
