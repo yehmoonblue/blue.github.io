@@ -41,29 +41,6 @@
           <li><a href="#">Page 2</a></li>
           <li><a href="#">Page 3</a></li>
         </ul>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">別在意</button>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">XD</h4>
-              </div>
-              <div class="modal-body">
-              </div>
-              <form action="">
-                名字:<br>
-                <input id="name" type="text" ><br>
-                年齡:<br>
-                <input id="age" type="text" ><br>
-                <button id="textbutton" type="button" class="btn btn-default">Hello</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input id="one-checkbox" type="checkbox" value="人類"/> 人類
-                <button id="button">點下了嗎？</button>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -115,22 +92,50 @@
   <input id="s" type="text" >
   <button id="a" type="button" class="btn btn-default">搜尋</button><br>
   
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">編輯</button>
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <form action="">
-                名字:<br>
-                <input type="text" value=""><br>
-                年齡:<br>
-                <input type="text" value=""><br>
-                <button type="button" class="btn btn-primary" >儲存</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
-              </form>
-            </div>
+    <div class="btn btn-primary" role="dialog" id="hahaha">
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <p id='searchresult'></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
-  
+      </div>
+    </div>
+    
+    
+    <div class="modal fade" role="dialog" id='hahaha'>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">更新資料</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="editName">姓名</label>
+                <input type="text" class="form-control" id="editName">
+              </div>
+              <div class="form-group">
+                <label for="editAge">年齡</label>
+                <input type="text" class="form-control" id="editAge">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="editItem()">儲存</button>
+          </div>
+        </div>
+      </div>
+    </div>
   
   
   
@@ -149,7 +154,7 @@
     $("div#comment").show();
     for(var i=0;i<studentCollection.find().length;i++){
       var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
-      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#Ask'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
+      var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#hahaha'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
       $("#table1 tbody").append(commentdata);
       $("#table2 tbody").append(searchdata);
       console.log(999);
@@ -246,12 +251,18 @@
 for(var i=0;i<result.length;i++){
   $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "<br>")
 }
+      $('#hahaha').modal();
   }else{
     var result = studentCollection.find({
       age:{
       "$gt":$("#bg").val()/1
     }
     });
+    $("p#searchresult").text(""); 
+      for(var i=0;i<result.length;i++){
+        $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
+      }
+      $('#hahaha').modal();
     console.log(result[0].age);
   }}
   
@@ -269,8 +280,9 @@ for(var i=0;i<result.length;i++){
       });
       $("p#searchresult").text(""); 
       for(var i=0;i<result.length;i++){
-        $("p#str").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
+        $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
       }
+      $('#hahaha').modal();
     }else{
       alert("你沒選")
     }
