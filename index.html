@@ -82,8 +82,8 @@
     <h2>崩潰。<p>後來又在外加了些工具和修改內容......<p>時間一直飛<p>真是讓人無力啊~</h2>
     <img src="picture/ios-7-symbol-nożyczek_318-34277.jpg"><br>
     <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
-    呵呵<input id='ckck' type="checkbox">
-    哈哈<input id='c8c8' type="checkbox">
+    呵呵<input type="checkbox" id="ckck" value="呵呵">
+    哈哈<input type="checkbox" id="ckck" value="哈哈">
     <input id="sm" type="number">
     <input id="bg" type="number">
     <button id="searchs" type="button" class="btn btn-default" onclick="look()">尋找</button>
@@ -255,7 +255,10 @@ for(var i=0;i<result.length;i++){
     console.log(result[0].age);
   }}
   
-  
+  var checkList = []
+  for(var i=0; i<Array.length; itt){
+  checkList.push(Array[i].value)
+  }
   
   
   
