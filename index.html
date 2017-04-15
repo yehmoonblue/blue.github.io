@@ -69,17 +69,6 @@
         <tr>
           <td>name</td>
           <td>age</td>
-          <td>老師</td>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    <table id="table2" class="table table-hover" type="button">
-      <thead>
-        <tr>
-          <td>name</td>
-          <td>age</td>
         </tr>
       </thead>
       <tbody>
@@ -89,7 +78,6 @@
     <input id="name2" type="text"><br>
     age:<br>
     <input id="age2" type="text"><br>
-    老師:<br>
     <select id="teacher">
       <option value="0">---請選擇老師---</option>
     </select>
@@ -161,15 +149,28 @@
     function showitem(){
       $("tbody").text("");
       $("div#comment").show();
+      var teach = ""
       for(var i=0;i<studentCollection.find().length;i++){
-        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td><td>"+studentCollection.find()[i].teacher+"</td></tr>"
+        var tata={
+        _id: studentCollection.find()[i].teacherid
+        };
+        console.log(tata._id)
+        if(tata._id!=undefined){
+        teacherName = teacherCollection.find(tata)[0].teachername
+        }else{
+        teacher = "沒有老師。"
+        }
+        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
         var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#hahaha'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
         $("#table1 tbody").append(commentdata);
-        $("#table2 tbody").append(searchdata);
+        $("#table1 tbody").append(searchdata);
         console.log(999);
       };
     };
+    
 
+    
+    
     function additem(){
       studentCollection.insert({
         name: $("input#name").val(),
@@ -206,7 +207,8 @@
       $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
     };
     $("table").on("click","button#items",searchdetail);
-
+    
+    
     
     function newstudent(){
       var newStudent = {
