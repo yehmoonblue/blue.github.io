@@ -60,6 +60,7 @@
     <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
     名字<input type="checkbox" id="mu" value="名字">
     年齡<input type="checkbox" id="mu" value="年齡">
+    老師<textarea id="teacher"></textarea><br>
     <button id="sera" type="button" class="btn btn-default" onclick="str">咻咻</button>
     <input id="sm" type="number">
     <input id="bg" type="number">
@@ -89,9 +90,9 @@
     age:<br>
     <input id="age2" type="text"><br>
     <select id="parent-id">
-      <option value="">---請選擇---</option>
-      <option>學生</option>
-      <option>打工族</option>
+      <option value="">---請選擇老師---</option>
+      <option>如月</option>
+      <option>朝比奈</option>
     </select>
     <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
     <input id="s" type="text" >
@@ -160,7 +161,7 @@
       $("tbody").text("");
       $("div#comment").show();
       for(var i=0;i<studentCollection.find().length;i++){
-        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
+        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td><td>"+studentCollection.find()[i].teacher+"</td></tr>"
         var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#hahaha'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
         $("#table1 tbody").append(commentdata);
         $("#table2 tbody").append(searchdata);
@@ -172,6 +173,7 @@
       studentCollection.insert({
         name: $("input#name").val(),
         age: $("input#age").val(),
+        teacher: $("textarea#teacher").val(),
       });
       studentCollection.save()
       showitem();
@@ -255,7 +257,7 @@
         });
         console.log(result[0].age);
         for(var i=0;i<result.length;i++){
-          $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "<br>")
+          $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "teacher":+result[i].teacher+ "<br>")
         }
         $('#hahaha').modal();
       }else{
@@ -266,7 +268,7 @@
         });
         $("p#searchresult").text(""); 
         for(var i=0;i<result.length;i++){
-          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
+          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "teacher":+result[i].teacher+ "<br>")
         }
         $('#hahaha').modal();
         console.log(result[0].age);
@@ -286,7 +288,7 @@
         });
         $("p#searchresult").text(""); 
         for(var i=0;i<result.length;i++){
-          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
+          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "teacher":+result[i].teacher+ "<br>")
         }
         $('#hahaha').modal();
       }else{
