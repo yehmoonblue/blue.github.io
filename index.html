@@ -74,14 +74,29 @@
       <tbody>
       </tbody>
     </table>
-    name:<br>
-    <input id="name2" type="text"><br>
-    age:<br>
-    <input id="age2" type="text"><br>
-    <select id="teacher">
-      <option value="0">---請選擇老師---</option>
-    </select>
-    <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
+    <div>
+      <div class="newComment">
+        <br>
+        <h2 class = "addCommentForm">Add Comment</h2>
+        姓名:<br>
+        <input id="name2" type="text"><br>
+        年齡:<br>
+        <input id="age2" type="text"><br>
+        老師:<br>
+        <select id="teacher">
+          <option value="0">---請選擇老師---</option>
+          <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
+        </select>
+      </div>
+    </div>
+    <div>
+    <br>
+      <h2 class="addCommentForm">Add Category</h2>
+      老師<input id="teacher"><br>
+      <button id="newteacher" type="button" class="btn btn-default" onclick="()">新增</button><br>
+    </div>
+    
+    
     <input id="s" type="text" >
     <button id="a" type="button" class="btn btn-default">搜尋</button><br>
   
