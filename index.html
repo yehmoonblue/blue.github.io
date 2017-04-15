@@ -89,10 +89,9 @@
     <input id="name2" type="text"><br>
     age:<br>
     <input id="age2" type="text"><br>
-    <select id="parent-id">
-      <option value="">---請選擇老師---</option>
-      <option>如月</option>
-      <option>朝比奈</option>
+    老師:<br>
+    <select id="teacher">
+      <option value="0">---請選擇老師---</option>
     </select>
     <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
     <input id="s" type="text" >
@@ -173,7 +172,7 @@
       studentCollection.insert({
         name: $("input#name").val(),
         age: $("input#age").val(),
-        teacher: $("textarea#teacher").val(),
+        teacher: $("select#teacher").val(),
       });
       studentCollection.save()
       showitem();
@@ -259,7 +258,7 @@
         });
         console.log(result[0].age);
         for(var i=0;i<result.length;i++){
-          $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "teacher":+result[i].teacher+ "<br>")
+          $("p#look").append("age:"+result[i].age+ "name:"+result[i].name+ "<br>")
         }
         $('#hahaha').modal();
       }else{
@@ -270,7 +269,7 @@
         });
         $("p#searchresult").text(""); 
         for(var i=0;i<result.length;i++){
-          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "teacher":+result[i].teacher+ "<br>")
+          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "<br>")
         }
         $('#hahaha').modal();
         console.log(result[0].age);
@@ -290,7 +289,7 @@
         });
         $("p#searchresult").text(""); 
         for(var i=0;i<result.length;i++){
-          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+ "teacher":+result[i].teacher+ "<br>")
+          $("p#searchresult").append("name:"+result[i].name+ "age:"+result[i].age+"<br>")
         }
         $('#hahaha').modal();
       }else{
