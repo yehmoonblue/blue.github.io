@@ -162,7 +162,7 @@
       $("tbody").text("");
       $("div#comment").show();
       for(var i=0;i<studentCollection.find().length;i++){
-        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
+        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td><td>"+teacherCollection.find()[i].teacher+"</td></tr>"
         var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#hahaha'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
         $("#table1 tbody").append(commentdata);
         $("#table2 tbody").append(searchdata);
