@@ -268,14 +268,14 @@ for(var i=0;i<result.length;i++){
   
   
   function str(){
+    var checkList = []
     if($("#mu:checked").length>0){
-      var checkList = []
       for(var i=0; i<$("#mu:checked").length; i++){
         checkList.push($("#mu:checked")[i].value)
       }
       var result = studentCollection.find({
         name:{
-          $in:checkList
+          $in: checkList
         }
       });
       $("p#searchresult").text(""); 
