@@ -57,45 +57,7 @@
     <h1>2個小時！</h1>
     <h2>崩潰。<p>後來又在外加了些工具和修改內容......<p>時間一直飛<p>真是讓人無力啊~</h2>
     <img src="picture/ios-7-symbol-nożyczek_318-34277.jpg"><br>
-    <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
-    名字<input type="checkbox" id="mu" value="名字">
-    年齡<input type="checkbox" id="mu" value="年齡">
-    <button id="sera" type="button" class="btn btn-default" onclick="str">咻咻</button>
-    <input id="sm" type="number">
-    <input id="bg" type="number">
-    <button id="search" type="button" class="btn btn-default" onclick="look()">尋找</button>
-    <table id="table1" class="table table-hover" type="button">
-      <thead>
-        <tr>
-          <td>name</td>
-          <td>age</td>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    <div>
-      <div class="newComment">
-        <br>
-        姓名:<br>
-        <input id="name" type="text"><br>
-        年齡:<br>
-        <input id="age" type="text"><br>
-        老師:<br>
-        <select id="teacher">
-          <option value="0">---請選擇老師---</option>
-        </select>
-        <button id="new" type="button" class="btn btn-default" onclick="additem()">新增</button><br>
-      </div> 
-    </div>
-    <div>
-    <br>
-      老師:<input id="teacher">
-      <button id="newteacher" type="button" class="btn btn-default" onclick="addCategory()">新增老師</button><br>
-    </div>
-    
-  
-    <div class="modal fade" role="dialog" id='hahaha'>
+        <div class="modal fade" role="dialog" id='hahaha'>
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -140,6 +102,46 @@
         </div>
       </div>
     </div>
+    
+    <button id="eee" type="button" class="btn btn-default" onclick="showitem()">顯示資料</button>
+    名字<input type="checkbox" id="mu" value="名字">
+    年齡<input type="checkbox" id="mu" value="年齡">
+    <button id="sera" type="button" class="btn btn-default" onclick="str">咻咻</button>
+    <input id="sm" type="number">
+    <input id="bg" type="number">
+    <button id="search" type="button" class="btn btn-default" onclick="look()">尋找</button>
+    <table id="table1" class="table table-hover" type="button">
+      <thead>
+        <tr>
+          <td>name</td>
+          <td>age</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div>
+      <div class="newComment">
+        <br>
+        姓名:<br>
+        <input id="name" type="text"><br>
+        年齡:<br>
+        <input id="age" type="text"><br>
+        老師:<br>
+        <select id="teacher">
+          <option value="0">---請選擇老師---</option>
+        </select>
+        <button id="new" type="button" class="btn btn-default" onclick="additem()">新增</button><br>
+      </div> 
+    </div>
+    <div>
+    <br>
+      老師:<input id="teacher">
+      <button id="newteacher" type="button" class="btn btn-default" onclick="addCategory()">新增老師</button><br>
+    </div>
+    
+  
+
   
 
   
@@ -151,7 +153,7 @@
     var db = fdb.db("shop");
     var editDataId;
     studentCollection = db.collection('articles');
-    teacherCollection = db.collection('xlg');
+    teacherCollection = db.collection('teacher');
     studentCollection.load();  
     teacherCollection.load();
     $("div#comment").hide();
