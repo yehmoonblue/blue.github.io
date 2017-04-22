@@ -141,7 +141,7 @@
       </div>
     </div>
   
-  
+
   
   </body>
 
@@ -157,7 +157,7 @@
     $("div#comment").hide();
   
     function showitem(){
-      $("#newteacher").hide();
+      $("#new").hide();
       $("tbody").text("");
       $("div#comment").show();
       var teach = ""
@@ -166,7 +166,7 @@
         _id: studentCollection.find()[i].teacherid
         };
         console.log(tata._id)
-        if(tata._id!=undefined){
+        if(tata._id != undefined){
         teacherName = teacherCollection.find(tata)[0].teachername
         }else{
         teacherName = "沒有老師。"
