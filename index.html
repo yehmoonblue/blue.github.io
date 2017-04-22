@@ -160,14 +160,14 @@
       $("#new").hide();
       $("tbody").text("");
       $("div#comment").show();
-      var teach = ""
+      var teacherName = ""
       for(var i=0;i<studentCollection.find().length;i++){
         var tata={
         _id: studentCollection.find()[i].teacherid
         };
         console.log(tata._id)
         if(tata._id != undefined){
-        teacherName = teacherCollection.find(tata)[0].teach
+        teacherName = teacherCollection.find(tata)[0].teachername
         }else{
         teacherName = "沒有老師。"
         }
