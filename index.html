@@ -63,7 +63,7 @@
     <button id="sera" type="button" class="btn btn-default" onclick="str">咻咻</button>
     <input id="sm" type="number">
     <input id="bg" type="number">
-    <button id="searchs" type="button" class="btn btn-default" onclick="look()">尋找</button>
+    <button id="search" type="button" class="btn btn-default" onclick="look()">尋找</button>
     <table id="table1" class="table table-hover" type="button">
       <thead>
         <tr>
@@ -85,7 +85,7 @@
         <select id="teacher">
           <option value="0">---請選擇老師---</option>
         </select>
-        <button id="new" type="button" class="btn btn-default" onclick="newstudent()">新增</button><br>
+        <button id="new" type="button" class="btn btn-default" onclick="additem()">新增</button><br>
       </div> 
     </div>
     <div>
@@ -114,7 +114,7 @@
     </div>
     
     
-    <div class="modal fade" role="dialog" id='hahaha'>
+    <div class="modal fade" role="dialog" id='hahahaha'>
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -157,6 +157,7 @@
     $("div#comment").hide();
   
     function showitem(){
+      $("#newteacher").hide();
       $("tbody").text("");
       $("div#comment").show();
       var teach = ""
@@ -168,9 +169,9 @@
         if(tata._id!=undefined){
         teacherName = teacherCollection.find(tata)[0].teachername
         }else{
-        teacher = "沒有老師。"
+        teacherName = "沒有老師。"
         }
-        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td></tr>"
+        var commentdata="<tr><td>"+studentCollection.find()[i].name+"</td><td>"+studentCollection.find()[i].age+"</td><td>"+teacherName+"</td></tr>"
         var searchdata="<tr><td><a id='items' data-toggle='modal' data-target='#hahaha'>"+studentCollection.find()[i]._id+"</a></td><td><button id='deleteitem' type='button' class='btn btn-default' data-id='"+studentCollection.find()[i]._id+"'>刪除</button><button id='editItem' class='btn btn-primary' data-id='"+studentCollection.find()[i]._id+"'>編輯</button></td></tr>"
         $("table1#commenttable tbody").append(commentdata);
         $("table1#idtable tbody").append(searchdata);
@@ -189,6 +190,7 @@
       studentCollection.insert({
         name: $("input#name").val(),
         age: $("input#age").val(),
+        teacherid: $("select#teacher :selected").val()
       });
       studentCollection.save()
       showitem();
@@ -197,20 +199,13 @@
     
     function addCategory(){
       teacherCollection.insert({
-        teacher: $("select#teacher").val(),
+        teachername: $("input#teacher").val()
       });
       teacherCollection.save()
       showitem();
       alert(JSON.stringify(teacherCollection.find()));
     }
     
-    
-    function search(){
-      var query={
-        type: $("input#search").val()
-      }
-      $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
-    };
   
     function searchdetail(){
       var id =$(this).text();
@@ -220,63 +215,8 @@
       console.log(id);
       $("p#searchresult").text(JSON.stringify(studentCollection.find(query)[0]));
     };
-    $("table").on("click","button#items",searchdetail);
     
     
-    
-    function newstudent(){
-      var newStudent = {
-        name: $("input#name2").val(),
-        age:$("input#age2").val()
-        
-      }
-      studentCollection.insert(newStudent);
-      studentCollection.save();
-      console.log(333);
-    };
-  
-
-    function deleteitem(){
-      var id = $(this).data("id");
-      console.log(id)
-      var r=confirm("你確定要刪掉嗎？")
-      if(r){
-        studentCollection.remove({
-          _id:id
-        });  
-        studentCollection.save();
-        showitem();
-      }else{
-        alert("你沒有刪掉");
-        console.log(777);
-      }}
-  
-
-    function editModal(){
-      editDataId = $(this).data("id");
-      var query={
-        _id: editDataId
-      }
-      $("input#editName").val(studentCollection.find(query)[0].name);
-      $("input#editAge").val(studentCollection.find(query)[0].age);
-      $("input#Teacher").val(studentCollection.find(query)[0].teacher);
-    }
-  
-    function editItem(){
-      var newData = {
-        name: $("input#editName").val(),
-        age: $("input#editAge").val(),
-        
-      };
-      var r=confirm("確定嗎?")
-      if(r){
-        studentCollection.updateById(editDataId,newData);
-        studentCollection.save();
-      }else{
-        alert("你沒更改。");
-      }}
-  
-
     function look(){
       if($("#sm").val()!=""){
         var result = studentCollection.find({
@@ -303,8 +243,8 @@
         $('#hahaha').modal();
         console.log(result[0].age);
       }}
-  
-
+    
+    
     function str(){
       var checkList = []
       if($("#mu:checked").length>0){
@@ -325,6 +265,50 @@
         alert("你沒選")
       }
     }
+    
+    function deleteitem(){
+      var id = $(this).data("id");
+      console.log(id)
+      var r=confirm("你確定要刪掉嗎？")
+      if(r){
+        studentCollection.remove({
+          _id:id
+        });  
+        studentCollection.save();
+        showitem();
+      }else{
+        alert("你沒有刪掉");
+        console.log(777);
+      }}
+    
+     function editModal(){
+      editDataId = $(this).data("id");
+      var query={
+        _id: editDataId
+      }
+      $("input#editName").val(studentCollection.find(query)[0].name);
+      $("input#editAge").val(studentCollection.find(query)[0].age);
+      $("input#Teacher").val(studentCollection.find(query)[0].teacher);
+    }
+    
+    
+     function editItem(){
+      var newData = {
+        name: $("input#editName").val(),
+        age: $("input#editAge").val(),
+        
+      };
+      var r=confirm("確定嗎?")
+      if(r){
+        studentCollection.updateById(editDataId,newData);
+        studentCollection.save();
+      }else{
+        alert("你沒更改。");
+      }}
+  
+
+    
+   
     
   
     $("table").on("click","button#deleteitem",deleteitem);
